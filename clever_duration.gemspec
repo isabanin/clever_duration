@@ -23,7 +23,9 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "clever_duration.gemspec",
      "lib/clever_duration.rb",
+     "lib/clever_duration/clever_duration.rb",
      "test/helper.rb",
      "test/test_clever_duration.rb"
   ]
