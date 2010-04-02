@@ -5,12 +5,12 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "clever_duration"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = "Human format time duration parsing."
+    gem.description = "A tiny Ruby lib for parsing human format of time duration to numbers."
     gem.email = "ilya.sabanin@gmail.com"
     gem.homepage = "http://github.com/iSabanin/clever_duration"
     gem.authors = ["Ilya Sabanin"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.add_development_dependency "shoulda", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new

@@ -1,17 +1,24 @@
-= clever_duration
+= Clever Duration
 
-Description goes here.
+Super tiny Ruby library for parsing human format of time durations to numbers.
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+It's far for complete, but it's a good base for future development. Test suit included.
 
-== Copyright
+Check tests for a list of supported formats.
 
-Copyright (c) 2010 Ilya Sabanin. See LICENSE for details.
+== Example
+
+ duration = CleverDuration.new("1 hour 30 minutes")
+ duration.hours # => 1.5
+ duration.seconds # => 5400
+ duration.minutes # => 90
+
+== History
+
+The library was extracted from Beanstalk during the awesome Wildbit Open Source Fridays.
+
+Read more about Open Source Fridays here:
+
+http://wildbit.com/blog/2010/01/15/open-source-fridays-at-wildbit/
+
+Copyright (c) 2010 Ilya Sabanin, Wildbit; see LICENSE for details.
