@@ -17,6 +17,8 @@ class CleverDuration
   def seconds
     if colon_format?
       regular_format_to_seconds
+    elsif decimal_format?
+      decimal_format_to_seconds
     else
       tokens_to_seconds
     end
@@ -25,7 +27,11 @@ class CleverDuration
 private
 
   def colon_format?
-    !!(input =~ /[:\.]/)
+    !!(input =~ /:/)
+  end
+  
+  def decimal_format?
+    !!(input =~ /\./)
   end
   
   def tokens
@@ -33,8 +39,14 @@ private
   end
   
   def regular_format_to_seconds
-    hours, minutes = *input.scan(/(\d{0,2})[:\.](\d{0,2})/).flatten
+    hours, minutes = *input.scan(/(\d{0,2}):(\d{0,2})/).flatten
     (hours.to_i * 60 * 60) + (minutes.to_i * 60)
+  end
+  
+  def decimal_format_to_seconds
+    hours, decimal = *input.scan(/(\d{0,2})\.(\d{0,2})/).flatten
+    minutes = ("0.#{decimal}".to_f * 60) / 1
+    (hours.to_i * 60 * 60) + (minutes * 60)
   end
 
   def tokens_to_seconds

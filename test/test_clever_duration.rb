@@ -49,12 +49,16 @@ class CleverDurationTest < Test::Unit::TestCase
       assert_equal 10, duration(":10").minutes
     end
     
-    should "translate dot" do
+    should "translate decimal" do
       assert_equal 3, duration("3.00").hours
       assert_equal 4, duration("04.00").hours
-      assert_equal 30, duration("0.30").minutes
-      assert_equal 2.5, duration("2.30").hours
-      assert_equal 10, duration(".10").minutes
+      assert_equal 18, duration("0.30").minutes
+      assert_equal 138, duration("2.30").minutes
+      assert_equal 2.3, duration("2.30").hours
+      assert_equal 6, duration(".10").minutes
+      assert_equal 30, duration(".50").minutes
+      assert_equal 1.5, duration("1.5").hours
+      assert_equal 90, duration("1.5").minutes
     end
     
     should "translate compounds" do
